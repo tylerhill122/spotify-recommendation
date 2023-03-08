@@ -12,6 +12,7 @@ def grabber(playlist_link):
     track_uris = [x['track']['uri'] for x in sp.playlist_tracks(playlist_URI)['items']]
     
     dict = {
+        'playlist_uri':playlist_URI,
         'track_uri':[],
         'track_name':[],
         'artist_uri':[],
@@ -60,16 +61,3 @@ def grabber(playlist_link):
         #audio features
         # audio_features = sp.audio_features(track_uri)
     return dict
-
-
-# dict = {
-#     'uri':track_uri,
-#     'name':track_name,
-#     'artist_uri':artist_uri,
-#     'artist_info':artist_info,
-#     'artist_name':artist_name,
-#     'artist_pop':artist_pop,
-#     'artist_genres':artist_genres,
-#     'album':album,
-#     'track_pop':track_pop,
-# }
